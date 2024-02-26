@@ -29,10 +29,10 @@ class KeyboardController: NSObject,
                       numberOfItemsInSection section: Int) -> Int {
     // Exercise 1: Return the correct number of items in a section
     // Tip: There's a helper method you can use located in this class
-    // START YOUR CODE HERE
+
     let numOfItems = numItems(in: section)
     return numOfItems
-    // END YOUR CODE HERE
+
   }
 
   func collectionView(_ collectionView: UICollectionView,
@@ -41,9 +41,7 @@ class KeyboardController: NSObject,
                                                   for: indexPath) as! KeyboardCell
     cell.configure(with: keyboardRows[indexPath.section][indexPath.row])
     // Exercise 4: Pass in the `didSelectString` closure to the KeyboardCell's corresponding property
-    // START YOUR CODE HERE
-    // ...
-    // END YOUR CODE HERE
+      cell.didSelectString = self.didSelectString
     return cell
   }
 
